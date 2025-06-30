@@ -117,10 +117,10 @@ class TestUtils(unittest.TestCase):
         doc.close()
         self.assertTrue(len(text_instances) > 0, "Inserted vertical text not found in PDF")
         print(f"Testing vertical text: {testing_text} inserted and found successfully.")
-        # try:
-        #     shutil.rmtree('input')
-        # except FileNotFoundError:
-        #     pass
+        try:
+            shutil.rmtree('input')
+        except FileNotFoundError:
+            pass
         
         
         

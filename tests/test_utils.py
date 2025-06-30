@@ -4,7 +4,10 @@ from evidence_encoder.utils import *
 import shutil 
 from fpdf import FPDF
 from tests.testing_helper import *
-
+from dotenv import load_dotenv
+load_dotenv()
+FONT_PATH = os.getenv("FONT_PATH")
+print(f"FONT_PATH: {FONT_PATH}")
 class TestUtils(unittest.TestCase):
     
     def test_check_directory(self):
@@ -72,25 +75,29 @@ class TestUtils(unittest.TestCase):
         except FileNotFoundError:
             pass
         
-    def test_add_text_to_pdf(self):
-        
-        FONT_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf" 
+    def test_add_text_to_pdf(self, FONT_PATH=FONT_PATH):
+        testing_text = "扶她"  
         create_fpdf("input", "test6.pdf", orientation='P')
         self.assertTrue(add_text_to_pdf(
             "input/test6.pdf",
             "input/test6_with_text.pdf",
-            page_num=0,x=50, y=200, font_size=40
+            page_num=0,text = testing_text,
+            x=50, y=250,
+            font_size=40,
+            encoding = 'utf-8-sig',
+            fontname = "TW-MOE-Std-Kai"
                         ))
         #find the text in the pdf
         doc = pymupdf.open("input/test6_with_text.pdf")
         page = doc[0]
-        text_instances = page.search_for("扶她納理")
+        text_instances = page.search_for(testing_text)
         doc.close()
         self.assertTrue(len(text_instances) > 0, "Inserted text not found in PDF")
-        # try:
-        #     shutil.rmtree('input')
-        # except FileNotFoundError:
-        #     pass
+        print(f"Testing text: {testing_text} inserted and found successfully.")
+        try:
+            shutil.rmtree('input')
+        except FileNotFoundError:
+            pass
         
         
         

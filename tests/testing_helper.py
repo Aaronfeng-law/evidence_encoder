@@ -42,7 +42,7 @@ def create_fpdf(directory="output_pdfs", filename="my_test_document.pdf", orient
         "It contains only English characters to avoid encoding issues.\n"
         "We are using a font that is definitely available on Ubuntu, like MoeStandardKai Sans.\n"
         "This approach ensures compatibility and avoids the 'latin-1' codec error.\n"
-        "Document created on June 29, 2025.扶她納理"
+        "Document created on June 29, 2025."
     )
     pdf.multi_cell(0, 10, english_text)
 

@@ -39,10 +39,12 @@ def get_file_info(file_path):
     doc.close()
     return file_info 
 
-def add_text_to_pdf(input_pdf, output_pdf, page_num=0, text="TESTING!!", x=50, y=400, font_size=40, FONT_PATH=FONT_PATH):
+def add_text_to_pdf(input_pdf, output_pdf, page_num=0, text="TESTING!!", x=50, y=400, font_size=40, fontname = None, encoding='utf-8-sig', font_path = FONT_PATH):
     doc = pymupdf.open(input_pdf)
     page = doc[page_num]
-    page.insert_text((x, y), text, fontsize=font_size, color=(0, 0, 0)) 
+    page.insert_font(fontname="TW-MOE-Std-Kai", fontfile=font_path)
+    page.insert_text((x, y), text, fontsize=font_size, color=(0, 0, 0), 
+                        fontname=fontname, encoding=encoding) 
     doc.save(output_pdf)
     doc.close()
     return True

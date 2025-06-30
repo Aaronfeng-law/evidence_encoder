@@ -86,6 +86,7 @@ class TestUtils(unittest.TestCase):
             font_size=40,
             encoding = 'utf-8-sig',
             fontname = "TW-MOE-Std-Kai"
+            
                         ))
         #find the text in the pdf
         doc = pymupdf.open("input/test6_with_text.pdf")
@@ -98,6 +99,30 @@ class TestUtils(unittest.TestCase):
             shutil.rmtree('input')
         except FileNotFoundError:
             pass
+        
+    def testing_add_vertical_text_to_pdf(self, FONT_PATH=FONT_PATH):
+        testing_text = "扶她那裡測試"  
+        create_fpdf("input", "test7.pdf", orientation='P')
+        self.assertTrue(add_vertical_text_to_pdf(
+            "input/test7.pdf",
+            "input/test7_vertical.pdf",
+            text=testing_text,
+            x=100, y=100,
+            font_size=40,
+            fontname="TW-MOE-Std-Kai",
+            font_path=FONT_PATH
+        ))
+        #find the text in the pdf
+        doc = pymupdf.open("input/test7_vertical.pdf")
+        page = doc[0]
+        text_instances = page.search_for(testing_text[0])
+        doc.close()
+        self.assertTrue(len(text_instances) > 0, "Inserted vertical text not found in PDF")
+        print(f"Testing vertical text: {testing_text} inserted and found successfully.")
+        # try:
+        #     shutil.rmtree('input')
+        # except FileNotFoundError:
+        #     pass
         
         
         

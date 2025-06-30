@@ -48,3 +48,20 @@ def add_text_to_pdf(input_pdf, output_pdf, page_num=0, text="TESTING!!", x=50, y
     doc.save(output_pdf)
     doc.close()
     return True
+
+def add_vertical_text_to_pdf(input_pdf, output_pdf, page_num=0, text="直式書寫範例", x=50, y=250, font_size=40, fontname=None, font_path=FONT_PATH):
+    doc = pymupdf.open(input_pdf)
+    page = doc[page_num]
+    if fontname and font_path:
+        page.insert_font(fontname=fontname, fontfile=font_path)
+    for idx, char in enumerate(text):
+        page.insert_text(
+            (x, y + idx * font_size),  # 固定 x，y 逐步往下
+            char,
+            fontsize=font_size,
+            color=(0, 0, 0),
+            fontname=fontname,
+        )
+    doc.save(output_pdf)
+    doc.close()
+    return True

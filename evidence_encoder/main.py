@@ -81,6 +81,6 @@ def main():
         print(f"{pdf_file} 已處理完成，輸出至 output 資料夾。")
 
     print("所有 PDF 批次處理完成！")
-print("已完成插入直式文字！")
+print("已完成證據編號！")
 if __name__ == "__main__":
     main()

@@ -1,0 +1,15 @@
+charset-normalizer==3.4.2
+click==8.2.1
+dotenv==0.9.9
+fpdf==1.7.2
+markdown-it-py==3.0.0
+mdurl==0.1.2
+pillow==11.2.1
+pygments==2.19.2
+pymupdf==1.26.1
+pypdf2==3.0.1
+python-dotenv==1.1.1
+reportlab==4.4.2
+rich==14.0.0
+rich-click==1.8.9
+typing-extensions==4.14.0

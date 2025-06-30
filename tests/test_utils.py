@@ -107,8 +107,6 @@ class TestUtils(unittest.TestCase):
             "input/test7.pdf",
             "input/test7_vertical.pdf",
             text=testing_text,
-            x=100, y=100,
-            font_size=40,
             fontname="TW-MOE-Std-Kai",
             font_path=FONT_PATH
         ))

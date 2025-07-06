@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 evidence_encoder/gui_main.py
+python3 evidence_encoder/main.py

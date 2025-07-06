@@ -8,6 +8,9 @@ pillow==11.2.1
 pygments==2.19.2
 pymupdf==1.26.1
 pypdf2==3.0.1
+pyqt5==5.15.11
+pyqt5-qt5==5.15.17
+pyqt5-sip==12.17.0
 python-dotenv==1.1.1
 reportlab==4.4.2
 rich==14.0.0

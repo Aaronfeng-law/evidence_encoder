@@ -4,6 +4,10 @@ import re
 from dotenv import load_dotenv
 load_dotenv()
 FONT_PATH = os.getenv("FONT_PATH")
+if not FONT_PATH or not os.path.exists(FONT_PATH):
+    FONT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "TW-MOE-Std-Kai.ttf")
+    if not os.path.exists(FONT_PATH):
+        raise ValueError("Font file not found. Please set FONT_PATH environment variable or place TW-MOE-Std-Kai.ttf in the project root directory.")
 
 def check_directory(input_dir='input'):
     if input_dir != 'input':
@@ -98,4 +102,3 @@ def add_vertical_text_to_pdf(
     doc.save(output_pdf)
     doc.close()
     return True
-

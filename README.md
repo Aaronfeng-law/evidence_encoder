@@ -58,6 +58,19 @@ README.md             # 本說明文件
 pip install -r requirements.txt
 ```
 
+#### Windows 安裝與相容性說明
+
+- **相依套件安裝**：使用 `pip install PyQt5 pymupdf python-dotenv` 安裝必要套件。
+- **字體路徑設定**：確保 `.env` 檔案中 `FONT_PATH` 指向正確的字體檔案路徑（例如 `C:\path\to\TW-MOE-Std-Kai.ttf`）。如果未設定，程式會嘗試尋找位於專案根目錄下的 `TW-MOE-Std-Kai.ttf`。
+- **啟動應用程式**：使用 `main.bat` 腳本啟動 GUI 介面，命令為：
+  ```bat
+  main.bat
+  ```
+  或直接執行：
+  ```bat
+  python evidence_encoder/gui_main.py
+  ```
+
 ---
 
 ## 使用說明
@@ -124,6 +137,3 @@ python3 -m unittest tests/test_utils.py
 - 本專案僅供學術與個人用途，請勿用於商業用途。
 
 ---
-
-
-

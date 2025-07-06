@@ -1,5 +1,6 @@
 .venv
 /example
 .vscode
-evidence_encoder/__pycache__
-tests/__pycache__
+__pycache__/
+*.pyc
+evidence_encoder/__pycache__/

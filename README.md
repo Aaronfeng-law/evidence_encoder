@@ -6,10 +6,8 @@ evidence_encoder 是一個用於批次處理 PDF 檔案並自動插入證據編�
 ## 為什麼要開發這個工具？
 證據編號、貼小耳朵，這些工作對於作過律所助理、實習生的人來說應該再熟悉不過了，每次都要本來都是都過手寫與蓋印張，而我是個懶鬼，所以我做了這個。
 
+##功能與限制
 ### 功能
-- 透過預先設定的證據標號（原證、被證、附件...)，自動化為pdf上標籤
-### 限制
-- 限使用於A4直式pdf檔案
 
 
 ## 目錄結構
@@ -40,8 +38,6 @@ pip install pymupdf fpdf python-dotenv
 ## 系統需求
 - Python 3.10+
 - 套件：`pymupdf`, `fpdf`, `python-dotenv`
-- 系統需安裝支援中文字體（預設為 MoeStandardKai.ttf），8可以在以下網址下載：https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&content_sn=47
+- 系統需安裝支援中文字體（預設為 MoeStandardKai.ttf），可以在以下網址下載：https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&content_sn=47
 
-## 未來
-- 自動偵測pdf方向
-- 更彈性的標注
+

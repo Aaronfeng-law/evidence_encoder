@@ -25,9 +25,17 @@ def main():
     '0': "自訂",
 }
 
+
+
+
     pdf_files = get_all_file_path('input')
+    
+    
     for pdf_file in pdf_files:
         print(f"\n處理檔案：{pdf_file}")
+        
+        get_file_info(pdf_file,verbose=True)
+        
         print("請選擇要插入的文字：")
         for k, v in evidence_options.items():
             print(f"{k}. {v}")

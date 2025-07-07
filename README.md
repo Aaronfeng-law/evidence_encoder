@@ -101,7 +101,6 @@ python3 evidence_encoder/gui_main.py
 
 
 
-
 ## 字體說明
 
 - 預設使用 [教育部標準楷書 MoeStandardKai.ttf](https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&content_sn=47)

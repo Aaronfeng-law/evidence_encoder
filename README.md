@@ -81,6 +81,8 @@ pip install -r requirements.txt
 
 ### 2. 啟動圖形化介面
 
+根據你的系統，你可能會需要建立虛擬環境(venv)
+
 ```sh
 bash main.sh
 ```
@@ -98,19 +100,7 @@ python3 evidence_encoder/gui_main.py
 
 
 
-## 測試
 
-執行單元測試：
-
-```sh
-bash test.sh
-```
-或
-```sh
-python3 -m unittest tests/test_utils.py
-```
-
----
 
 ## 字體說明
 

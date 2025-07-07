@@ -43,7 +43,6 @@ README.md             # 本說明文件
 ## 安裝需求
 
 - Python 3.10+
-- Ubuntu 24.04（開發環境）
 - 必要套件：
   - `pymupdf`
   - `fpdf`
@@ -134,6 +133,5 @@ python3 -m unittest tests/test_utils.py
 ## 貢獻與授權
 
 - 歡迎 issue、pull request 與建議！
-- 本專案僅供學術與個人用途，請勿用於商業用途。
 
 ---

@@ -14,6 +14,12 @@
 - **環境變數設定**：可於 `.env` 設定字體路徑，支援 MoeStandardKai.ttf 或其他字體。
 - **單元測試**：內建測試腳本，確保功能正確。
 
+<!-- add file /image/demo.png -->
+
+![alt text](image/demo.png "demo")
+
+
+
 ---
 
 ## 目錄結構

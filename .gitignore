@@ -6,3 +6,5 @@ __pycache__/
 evidence_encoder/__pycache__/
 tests/__pycache__/
 output/
+evidence_encoder/build/
+evidence_encoder/main.spec

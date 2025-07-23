@@ -77,7 +77,7 @@ class MainWindow(QWidget):
         main_layout.addLayout(right_layout, 3)
         self.setLayout(main_layout)
 
-        self.rename_cb = QCheckBox("是否統一根據證據編號命名檔案？")
+        self.rename_cb = QCheckBox("根據證據編號命名檔案")
         self.rename_cb.setChecked(True)
         right_layout.addWidget(self.rename_cb)
         

@@ -30,6 +30,7 @@ def process_pdf(
     custom_text="",
     font_size=16,
     output_dir="output",
+    rename_cb = True,
     x=570,
     y=25
 ):
@@ -45,7 +46,12 @@ def process_pdf(
     if need_number:
         text = f"{text}號"
     os.makedirs(output_dir, exist_ok=True)
-    output_pdf = os.path.join(output_dir, f"{text}_{os.path.basename(pdf_file)}.pdf")
+    
+    if rename_cb:  # rename_cb 重新命名邏輯
+        text = f"{text}_{os.path.basename(pdf_file)}"
+        output_pdf = os.path.join(output_dir, f"{text}")
+    else:
+        output_pdf = os.path.join(output_dir, f"{os.path.basename(pdf_file)}")
     add_vertical_text_to_pdf(
         input_pdf=pdf_file,
         output_pdf=output_pdf,
@@ -63,6 +69,7 @@ def batch_process_pdfs(
     need_number=True,
     custom_text="",
     font_size=16,
+    rename_cb = True,
     output_dir="output",
     x=570,
     y=25
@@ -80,6 +87,7 @@ def batch_process_pdfs(
             custom_text,
             font_size,
             output_dir,
+            rename_cb,
             x,
             y
         )

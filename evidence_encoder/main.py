@@ -77,6 +77,10 @@ class MainWindow(QWidget):
         main_layout.addLayout(right_layout, 3)
         self.setLayout(main_layout)
 
+        self.rename_cb = QCheckBox("是否統一根據證據編號命名檔案？")
+        self.rename_cb.setChecked(True)
+        right_layout.addWidget(self.rename_cb)
+        
         # 記錄每個檔案的設定
         self.file_settings = {}
 
@@ -103,6 +107,7 @@ class MainWindow(QWidget):
                     "evidence_number": "1",
                     "need_number": True,
                     "font_size": 16,
+                    "rename_cb": True,
                     "x": 570,
                     "y": 25,
                 }
@@ -120,6 +125,7 @@ class MainWindow(QWidget):
         self.font_size_edit.setText(str(setting["font_size"]))
         self.x_edit.setText(str(setting["x"]))
         self.y_edit.setText(str(setting["y"]))
+        self.rename_cb.setChecked(setting["rename_cb"])
         self.advanced_checkbox.setChecked(setting["x"] != 570 or setting["y"] != 25)
 
     def save_file_settings(self):
@@ -136,6 +142,7 @@ class MainWindow(QWidget):
             "evidence_number": self.number_edit.text() or "1",
             "need_number": self.need_number.isChecked(),
             "font_size": int(self.font_size_edit.text() or "16"),
+            "rename_cb": self.rename_cb.isChecked(),
             "x": float(self.x_edit.text() or "570"),
             "y": float(self.y_edit.text() or "25"),
         }
@@ -161,6 +168,7 @@ class MainWindow(QWidget):
                     need_number=setting["need_number"],
                     custom_text=setting["custom_text"],
                     font_size=setting["font_size"],
+                    rename_cb = setting["rename_cb"],
                     output_dir="output",
                     x=setting["x"],
                     y=setting["y"]

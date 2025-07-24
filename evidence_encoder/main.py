@@ -3,7 +3,8 @@ from PyQt5.QtWidgets import (
     QApplication, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QFileDialog,
     QComboBox, QLineEdit, QCheckBox, QMessageBox, QListWidget, QListWidgetItem, QGroupBox
 )
-from core import process_pdf, evidence_options
+from core import *
+from utils import *
 import os
 
 class MainWindow(QWidget):
